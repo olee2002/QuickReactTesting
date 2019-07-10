@@ -16,16 +16,8 @@ export default class App extends Component {
 
   }
 
-  handleClickAge() {
-  }
-
-  handleClickName() {
-  }
-
-  handleClickPoints() {
-  }
-
-  handleClickRank() {
+  handleSort=(data)=> {
+    return data.sort((a,b)=>a-b)
   }
 
   render() {
@@ -35,10 +27,10 @@ export default class App extends Component {
           <h1>Leaderboard</h1>
         </header>
         <div className="text-center buttons">
-          <Age></Age>
-          <Name></Name>
-          <Points></Points>
-          <Rank></Rank>
+          <Age handleSort = {this.handleSort}></Age>
+          <Name handleSort = {this.handleSort}></Name>
+          <Points handleSort = {this.handleSort}></Points>
+          <Rank handleSort = {this.handleSort}></Rank>
           <Table></Table>
         </div>
       </div>
