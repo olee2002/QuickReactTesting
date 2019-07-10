@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Age = ({}) => (
+const Age = ({handleSort}) => (
   <button className="btn btn-primary age" name="age">Age</button>
 );
 
