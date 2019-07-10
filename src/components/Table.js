@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {usersJSON} from '../data';
 
+
 export default class Table extends Component {
 	constructor(props) {
 		super(props);
@@ -44,11 +45,13 @@ export default class Table extends Component {
 					</tr>
 				</thead>
 				<tbody>
-               <td>{users.map(user=><div>{user.age}</div>)}</td>
-               <td>{users.map(user=><div>{user.name}</div>)}</td>
-               <td>{users.map(user=><div>{user.points}</div>)}</td>
-               <td>{users.map(user=><div>{user.rank}</div>)}</td>
-
+               {users.map(user=>
+               <tr>
+                  <td>{user.age}</td>
+                  <td>{user.name}</td>
+                  <td>{user.points}</td>
+                  <td>{user.rank}</td>
+               </tr>)}
             </tbody>
 			</table>
 		</div>)

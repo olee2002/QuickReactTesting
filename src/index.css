@@ -18,7 +18,13 @@ table.table {
 
 .table td, .table th {
    text-align: center;
+   height: 10%;
 }
+
+th {
+   font-weight: bold;
+}
+
 
 header {
   margin-bottom: 20px;
