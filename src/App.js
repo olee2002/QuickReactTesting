@@ -19,16 +19,21 @@ export default class App extends Component {
 
   handleSort=(key)=> {
    const { users } = this.state
-    const sortedUsers = users.sort((a,b)=>{
-      console.log('key',a[key], b[key])
-       return a[key]-b[key]
-    })
-    console.log('key', key, sortedUsers)
+   if(key==='name'){
+      const sortedUsers = users.sort(function(a, b){
+         if(a.name < b.name) { return -1; }
+         if(a.name > b.name) { return 1; }
+         return 0;
+     })
+     this.setState({users: sortedUsers})
+   }
+    const sortedUsers = users.sort((a,b)=>a[key]-b[key])
     this.setState({users: sortedUsers})
   }
 
   render() {
    const { users } = this.state
+   console.log('users', users)
     return (
       <div className="text-center buttons">
         <header className="text-center">
