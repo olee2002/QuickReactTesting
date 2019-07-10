@@ -33,7 +33,6 @@ export default class App extends Component {
 
   render() {
    const { users } = this.state
-   console.log('users', users)
     return (
       <div className="text-center buttons">
         <header className="text-center">

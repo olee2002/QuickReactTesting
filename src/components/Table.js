@@ -33,7 +33,6 @@ export default class Table extends Component {
 
 	render() {
       const { users } = this.state
-      console.log('user', users)
 		return (<div>
 			<table className="table table-striped">
 				<thead>
@@ -45,8 +44,8 @@ export default class Table extends Component {
 					</tr>
 				</thead>
 				<tbody>
-               {users.map(user=>
-               <tr key={user.id}>
+               {users.map((user, i)=>
+               <tr key={i}>
                   <td>{user.age}</td>
                   <td>{user.name}</td>
                   <td>{user.points}</td>
