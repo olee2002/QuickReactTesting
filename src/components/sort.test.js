@@ -30,18 +30,18 @@ describe("Test Sorting Components", () => {
        "children": "Rank", 
        "className": "btn btn-primary rank", 
        "name": "rank", 
-       "onClick": age.props().onClick});
+       "onClick": rank.props().onClick});
     let points = shallow(<Points />);
     expect(points.props()).toEqual({
        "children": "Points", 
        "className": "btn btn-primary points", 
        "name": "points", 
-       "onClick": age.props().onClick});
+       "onClick": points.props().onClick});
     let name = shallow(<Name />);
     expect(name.props()).toEqual({
        "children": "Name", 
        "className": "btn btn-primary name", 
        "name": "name", 
-       "onClick": age.props().onClick});
+       "onClick": name.props().onClick});
   });
 });
