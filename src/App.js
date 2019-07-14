@@ -25,25 +25,25 @@ export default class App extends Component {
          if(a.name > b.name) { return 1; }
          return 0;
      })
-     this.setState({users: sortedUsers})
+     this.setState({users: sortedUsers, sortBy:key})
    }
     const sortedUsers = users.sort((a,b)=>a[key]-b[key])
-    this.setState({users: sortedUsers})
+    this.setState({users: sortedUsers, sortBy:key})
   }
 
   render() {
-   const { users } = this.state
+   const { users, sortBy } = this.state
     return (
       <div className="text-center buttons">
         <header className="text-center">
           <h1>Leaderboard</h1>
         </header>
         <div className="text-center buttons">
-          <Age handleSort = {this.handleSort} users={users} ></Age>
-          <Name handleSort = {this.handleSort} users={users}></Name>
-          <Points handleSort = {this.handleSort} users={users}></Points>
-          <Rank handleSort = {this.handleSort} users={users}> </Rank>
-          <Table users={users} handleSort = {this.handleSort}></Table>
+          <Age handleSort = {this.handleSort} users={users} sortBy={sortBy}></Age>
+          <Name handleSort = {this.handleSort} users={users} sortBy={sortBy}></Name>
+          <Points handleSort = {this.handleSort} users={users} sortBy={sortBy}></Points>
+          <Rank handleSort = {this.handleSort} users={users} sortBy={sortBy}> </Rank>
+          <Table users={users} handleSort = {this.handleSort} sortBy={sortBy}></Table>
         </div>
       </div>
     );

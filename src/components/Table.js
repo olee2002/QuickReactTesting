@@ -6,7 +6,8 @@ export default class Table extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			users: props.users
+         users: props.users,
+         sortBy:props.sortBy
       }
       const url = window.location.href
       const locationArr = url.split('/')
