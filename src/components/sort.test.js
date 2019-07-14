@@ -18,14 +18,13 @@ configure({ adapter: new Adapter() });
 
 describe("Test Sorting Components", () => {
   it('button click function should be passed as a prop to all', () => {
-    let age = shallow(<Age />);
-    expect(age.props()).toEqual({"children": "Age", "className": "btn btn-primary age", "name": "age", "onClick": undefined});
-    let rank = shallow(<Rank />);
-    expect(rank.props()).toEqual({"children": "Rank", "className": "btn btn-primary rank", "name": "rank", "onClick": undefined});
-    let points = shallow(<Points />);
-    expect(points.props()).toEqual({"children": "Points", "className": "btn btn-primary points", "name": "points", "onClick": undefined});
-    let name = shallow(<Name />);
-    expect(name.props()).toEqual({"children": "Name", "className": "btn btn-primary name", "name": "name", "onClick": undefined});
-
-  });
+    let age = shallow(<Age handleClick={mockFn}/>);
+    console.log('age test', age)
+    expect(mockFn).toHaveBeenCalled();
+    let rank = shallow(<Rank handleClick={mockFn}/>);
+    expect(mockFn).toHaveBeenCalled();
+    let points = shallow(<Points handleClick={mockFn}/>);
+    expect(mockFn).toHaveBeenCalled();
+    let name = shallow(<Name handleClick={mockFn}/>);
+    expect(mockFn).toHaveBeenCalled();
 });

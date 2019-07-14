@@ -43,7 +43,7 @@ export default class App extends Component {
           <Name handleSort = {this.handleSort} users={users}></Name>
           <Points handleSort = {this.handleSort} users={users}></Points>
           <Rank handleSort = {this.handleSort} users={users}> </Rank>
-          <Table users={users}></Table>
+          <Table users={users} handleSort = {this.handleSort}></Table>
         </div>
       </div>
     );

@@ -7,16 +7,20 @@ export default class Table extends Component {
 		super(props);
 		this.state = {
 			users: props.users
-		}
+      }
+      const url = window.location.href
+      const locationArr = url.split('/')
+      const location = locationArr[locationArr.length-1]
+      if(url.includes(location)){
+       props.handleSort(location)
+      } 
 	}
 
 	componentWillReceiveProps() {
-		
 	}
 
     // complete the comparators
 	compareByAge(a, b) {
-		
 	}
 
 	compareByName(a, b) {
